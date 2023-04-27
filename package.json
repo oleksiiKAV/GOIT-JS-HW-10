@@ -2,20 +2,21 @@
   "name": "parcel-project-template",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://oleksiiKAV.github.io/GOIT-JS-HW-08",
+  "homepage": "https://oleksiiKAV.github.io/GOIT-JS-HW-10",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /GOIT-JS-HW-08/"
+    "build": "parcel build src/*.html --public-url /GOIT-JS-HW-10/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/oleksiiKAV/GOIT-JS-HW-08"
+    "url": "git+https://github.com/oleksiiKAV/GOIT-JS-HW-10"
   },
   "dependencies": {
     "@vimeo/player": "^2.19.0",
     "lodash": "^4.17.21",
     "lodash.throttle": "^4.1.1",
     "modern-normalize": "^1.1.0",
+    "notiflix": "^3.2.6",
     "simplelightbox": "^2.13.0"
   },
   "devDependencies": {
