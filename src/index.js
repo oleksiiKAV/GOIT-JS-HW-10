@@ -1,6 +1,6 @@
 import './css/styles.css';
 
-import './helpers.js'
-import './countryAPI.js'
-import './findCountry.js'
+import './js/helpers.js'
+import './js/fetchCountries.js'
+import './js/findCountry.js'
 

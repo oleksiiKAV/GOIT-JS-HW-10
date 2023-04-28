@@ -1,14 +1,37 @@
-const outputList = document.querySelector(".country-list");
+import Notiflix from 'notiflix';
+import 'notiflix/dist/notiflix-3.2.6.min.css'
+
+Notiflix.Notify.init({
+    width: '280px',
+    position: 'center-center', // 'right-top' - 'right-bottom' - 'left-top' - 'left-bottom' - 'center-top' - 'center-bottom' - 'center-center'
+    distance: '100px',
+    opacity: 1,
+    borderRadius: '3px',
+    clickToClose: true,
+})
+
+// 0-info, 1-warn, 2-err
+export function infoSys(level) {
+    switch (level) {
+        case 0:
+            Notiflix.Notify.info(`Too many matches found. Please enter a more specific name.`)
+            break;
+        case 1:
+            Notiflix.Notify.warning(`Please enter a country name.`)
+            break;
+        case 2:
+            Notiflix.Notify.failure(`Oops, there is no country with that name.`)
+            break;
+        default:
+            break;
+    }
+}
 
 export function clearList() {
-
+    const outputList = document.querySelector(".country-list");
+    document.querySelector('.country-info').innerHTML = ""
     if (outputList.firstElementChild) {
-        const li = document.querySelectorAll('li');
-        // debugger
-        for (let i = 0; i < li.length; i++) {
-            l = li[i];
-            l.remove();
-        }
+        outputList.innerHTML = ""
     }
 }
 
@@ -33,7 +56,7 @@ export function showCountry(data, length) {
         <h2 class="countryName">${data?.name?.official}</h2>
         `
         details.innerHTML = `<div class="country-info">
-        <h3>Capital: >${data.capital}</h3>
+        <h3>Capital: ${data.capital}</h3>
         <h3>Population: ${data.population}</h3>
         <h3> Language: ${str}</h3>
         </div>
